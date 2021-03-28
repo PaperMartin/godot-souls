@@ -26,8 +26,11 @@ func _physics_process(delta):
 	_calculate_movement(delta)
 
 func _calculate_movement(delta):
-	var velocity : Transform = animTree.get_root_motion_transform().rotated(Vector3(0,1,0),body.rotation.y)
-	body.move_and_slide(velocity.origin / delta,Vector3(0,1,0))
+	var rootmotion : Transform = animTree.get_root_motion_transform().rotated(Vector3(0,1,0),body.rotation.y)
+	var velocity : Vector3 = animTree.get_root_motion_transform().rotated(Vector3(0,1,0),body.rotation.y).origin
+	velocity.y -= delta * 2
+	
+	body.move_and_slide(velocity / delta,Vector3(0,1,0))
 
 func _turn_character(delta):
 	body.rotation.y += rotation_input * RotationSpeed * delta
