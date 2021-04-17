@@ -1,0 +1,56 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=11 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Fall-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Idle-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "WalkForward-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Run-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "WalkBackward-loop"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=6]
+blend_point_0/node = SubResource( 2 )
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource( 3 )
+blend_point_1/pos = 0.5
+blend_point_2/node = SubResource( 4 )
+blend_point_2/pos = 1.0
+blend_point_3/node = SubResource( 5 )
+blend_point_3/pos = -0.5
+
+[sub_resource type="AnimationNodeBlendTree" id=7]
+graph_offset = Vector2( -308, 65 )
+nodes/forward_movement/node = SubResource( 6 )
+nodes/forward_movement/position = Vector2( -100, 140 )
+node_connections = [ "output", 0, "forward_movement" ]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+advance_condition = "is_falling"
+xfade_time = 0.15
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+advance_condition = "is_not_falling"
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/Fall-loop/node = SubResource( 1 )
+states/Fall-loop/position = Vector2( 228, 101 )
+states/idle/node = SubResource( 7 )
+states/idle/position = Vector2( 2, 101 )
+transitions = [ "idle", "Fall-loop", SubResource( 8 ), "Fall-loop", "idle", SubResource( 9 ) ]
+start_node = "idle"
+graph_offset = Vector2( -356, -11 )
+
+[resource]
+graph_offset = Vector2( -145, 244.5 )
+nodes/StateMachine/node = SubResource( 10 )
+nodes/StateMachine/position = Vector2( 280, 140 )
+nodes/output/position = Vector2( 580, 140 )
+node_connections = [ "output", 0, "StateMachine" ]

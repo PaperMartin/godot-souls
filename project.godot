@@ -58,6 +58,12 @@ sprint={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_2="Characters"
+
 [rendering]
 
+quality/voxel_cone_tracing/high_quality=true
 environment/default_environment="res://default_env.tres"

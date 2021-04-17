@@ -14,7 +14,7 @@ var _motor : CharacterMotor
 var _move_input : Vector2 = Vector2.ZERO
 var _input_velocity : Vector2 = Vector2.ZERO
 var _is_sprinting : bool = false
-const FLOAT_EPSILON = 0.01
+const FLOAT_EPSILON = 0.05
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +40,7 @@ func _process(delta):
 	var targetVelocity = _move_input.y
 	if !_is_sprinting or _move_input.y < 0:
 		targetVelocity *= 0.5
+	
 	if _input_velocity.y != targetVelocity:
 		if targetVelocity > _input_velocity.y:
 			_input_velocity.y += acceleration * delta
@@ -50,5 +51,5 @@ func _process(delta):
 	
 	var velocity : Vector2 = Vector2.ZERO
 	velocity.y = _input_velocity.y
-	_anim_tree["parameters/forward_movement/blend_position"] = velocity.y
+	_anim_tree.set_movement_speed(velocity.y)
 	_motor.rotation_input = _move_input.x

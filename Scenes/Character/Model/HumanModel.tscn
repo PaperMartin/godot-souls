@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Models/LowPolyHuman.glb" type="PackedScene" id=1]
+[ext_resource path="res://Animations/Humanoid/HumanBlendTree.tres" type="AnimationNodeBlendTree" id=2]
+[ext_resource path="res://Scripts/Character/Animation/HumanAnimManager.gd" type="Script" id=3]
+[ext_resource path="res://Animations/Humanoid/HumanAnimStateMachine.tres" type="AnimationNodeStateMachinePlayback" id=4]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="RootMotionView" type="RootMotionView" parent="."]
+animation_path = NodePath("../AnimationTree")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = ExtResource( 2 )
+anim_player = NodePath("../LowPolyHuman/AnimationPlayer")
+active = true
+process_mode = 0
+root_motion_track = NodePath("rig/Skeleton:root")
+parameters/StateMachine/playback = ExtResource( 4 )
+parameters/StateMachine/conditions/is_falling = false
+parameters/StateMachine/conditions/is_not_falling = true
+parameters/StateMachine/idle/forward_movement/blend_position = 0
+script = ExtResource( 3 )
+
+[node name="LowPolyHuman" parent="." instance=ExtResource( 1 )]
+
+[editable path="LowPolyHuman"]
