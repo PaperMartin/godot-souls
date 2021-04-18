@@ -8,6 +8,8 @@ export var BodyPath : NodePath
 
 onready var _body : KinematicBody = get_node(BodyPath) as KinematicBody
 
+var FallTimer : float = 0;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,15 +19,18 @@ func set_movement_speed(var speed : float):
 	pass
 
 func _physics_process(delta):
-	
+	_update_fall(delta)
+
+func _update_fall(var delta : float):
 	if _body.is_on_floor() == true:
-		print_debug("is not falling")
 		self["parameters/StateMachine/conditions/is_falling"] = false;
 		self["parameters/StateMachine/conditions/is_not_falling"] = true;
+		FallTimer = 0
 	else:
-		print_debug("is falling")
-		self["parameters/StateMachine/conditions/is_falling"] = true;
-		self["parameters/StateMachine/conditions/is_not_falling"] = false;
+		FallTimer += delta
+		if FallTimer > 0.25:
+			self["parameters/StateMachine/conditions/is_falling"] = true;
+			self["parameters/StateMachine/conditions/is_not_falling"] = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid.gd"
 }, {
-"base": "Spatial",
-"class": "OrbitArm",
-"language": "GDScript",
-"path": "res://addons/qodot/example_scenes/2-miscallaneous/1-runtime-map-building/orbit_arm.gd"
-}, {
 "base": "PhysicsEntity",
 "class": "PhysicsBall",
 "language": "GDScript",
@@ -183,7 +178,6 @@ _global_script_class_icons={
 "CharacterMotor": "",
 "LavaLayer": "",
 "LiquidLayer": "",
-"OrbitArm": "",
 "PhysicsBall": "",
 "PhysicsEntity": "",
 "PlayerController": "",
@@ -261,5 +255,6 @@ sprint={
 
 [rendering]
 
+quality/shadows/filter_mode=2
 quality/voxel_cone_tracing/high_quality=true
 environment/default_environment="res://default_env.tres"

@@ -23,5 +23,3 @@ parameters/StateMachine/idle/forward_movement/blend_position = 0
 script = ExtResource( 3 )
 
 [node name="LowPolyHuman" parent="." instance=ExtResource( 1 )]
-
-[editable path="LowPolyHuman"]
