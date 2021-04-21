@@ -66,5 +66,5 @@ func _calculate_gravity(delta):
 
 func _turn_character(target_direction : Vector3):
 	var target : Vector3 = target_direction + _body.translation
-	if target.length() != 0:
+	if target_direction.length() != 0:
 		_body.look_at(target,Vector3.UP)
