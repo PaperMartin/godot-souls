@@ -55,6 +55,7 @@ near = 0.01
 
 [node name="AnimationTree" parent="Spatial" index="1"]
 parameters/StateMachine/playback = SubResource( 3 )
+CoyoteTime = 0.2
 BodyPath = NodePath("../..")
 
 [editable path="Spatial"]

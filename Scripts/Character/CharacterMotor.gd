@@ -37,7 +37,7 @@ func _calculate_movement(delta):
 	velocity.y += currentGravity * delta
 	if velocity.y >= 0:
 		velocity.y -= delta
-	_body.move_and_slide(velocity / delta,Vector3(0,1,0), true)
+	_body.move_and_slide_with_snap(velocity / delta, Vector3(0,-0.1,0),Vector3(0,1,0), true)
 
 func _get_root_motion() -> Transform:
 	var rootmotion : Transform = _anim_tree.get_root_motion_transform().rotated(Vector3(0,1,0),_body.rotation.y)
@@ -49,8 +49,6 @@ func _get_target_direction(input : Vector2) -> Vector3:
 	var LeftDirection : Vector3 = _movementaxis.global_transform.basis.x
 	var ProjectedForwardDirection : Vector3 = ForwardDirection.slide(Vector3.UP)
 	var ProjectedLeftDirection = LeftDirection.slide(Vector3.UP)
-	
-	print_debug (ProjectedForwardDirection)
 	
 	var targetDirection : Vector3 = Vector3.ZERO
 	
@@ -68,5 +66,5 @@ func _calculate_gravity(delta):
 
 func _turn_character(target_direction : Vector3):
 	var target : Vector3 = target_direction + _body.translation
-	
-	_body.look_at(target,Vector3.UP)
+	if target.length() != 0:
+		_body.look_at(target,Vector3.UP)

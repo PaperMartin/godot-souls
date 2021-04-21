@@ -4,6 +4,7 @@ extends AnimationTree
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export var CoyoteTime : float = 0.1
 export var BodyPath : NodePath
 
 onready var _body : KinematicBody = get_node(BodyPath) as KinematicBody
@@ -28,7 +29,7 @@ func _update_fall(var delta : float):
 		FallTimer = 0
 	else:
 		FallTimer += delta
-		if FallTimer > 0.25:
+		if FallTimer > CoyoteTime:
 			self["parameters/StateMachine/conditions/is_falling"] = true;
 			self["parameters/StateMachine/conditions/is_not_falling"] = false;
 
