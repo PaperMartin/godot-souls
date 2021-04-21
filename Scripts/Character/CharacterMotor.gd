@@ -31,8 +31,9 @@ func _physics_process(delta):
 func _calculate_movement(delta):
 	var rootmotion : Transform = animTree.get_root_motion_transform().rotated(Vector3(0,1,0),body.rotation.y)
 	var velocity : Vector3 = rootmotion.origin
-	velocity.y -= delta * 2
 	velocity.y += currentGravity * delta
+	if velocity.y >= 0:
+		velocity.y -= delta
 	body.move_and_slide(velocity / delta,Vector3(0,1,0), true)
 
 func _calculate_gravity(delta):
