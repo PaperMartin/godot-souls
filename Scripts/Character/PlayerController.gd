@@ -37,19 +37,21 @@ func _unhandled_input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var targetVelocity = _move_input.y
-	if !_is_sprinting or _move_input.y < 0:
-		targetVelocity *= 0.5
+	_update_input(delta)
+	_update_movement_input(delta)
+
+func _update_input(delta):
+	_move_input.y = 0
+	_move_input.y = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
 	
-	if _input_velocity.y != targetVelocity:
-		if targetVelocity > _input_velocity.y:
-			_input_velocity.y += acceleration * delta
-		else:
-			_input_velocity.y -= acceleration * delta
-	if abs(_input_velocity.y - targetVelocity) <= FLOAT_EPSILON:
-		_input_velocity.y = targetVelocity
+	_move_input.x = 0
+	_move_input.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 	
-	var velocity : Vector2 = Vector2.ZERO
-	velocity.y = _input_velocity.y
-	_anim_tree.set_movement_speed(velocity.y)
-	_motor.rotation_input = _move_input.x
+	if Input.is_action_pressed("sprint"):
+		_is_sprinting = true
+	else:
+		_is_sprinting = false
+	pass
+
+func _update_movement_input(delta):
+	_motor.movement_input = _move_input
