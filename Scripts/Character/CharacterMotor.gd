@@ -17,8 +17,10 @@ onready var _anim_tree : AnimationTree = get_node(AnimTree)
 onready var _body : KinematicBody = get_node(Body)
 onready var _movementaxis : Spatial = get_node(MovementAxis)
 
-var movement_input : Vector2
-var smoothed_movement_input : Vector2 = Vector2.ZERO
+var sprint_input : bool = false
+var raw_movement_input : Vector2
+var current_direction : Vector3 = Vector3.ZERO
+var target_direction : Vector3
 var currentAcceleration : float
 var currentGravity : float
 
@@ -28,22 +30,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var target_direction : Vector3 = _get_target_direction(smoothed_movement_input)
-	_smooth_input(delta)
+	if raw_movement_input.length() > 0:
+		target_direction = _get_target_direction(raw_movement_input)
 	_update_acceleration(delta)
 	_calculate_gravity(delta)
-	_turn_character(target_direction)
+	_turn_character(target_direction,delta)
 	_calculate_movement(delta)
 
-func _smooth_input(delta):
-	smoothed_movement_input = lerp(smoothed_movement_input,movement_input,RotationSpeed * delta)
-
 func _update_acceleration(delta):
-	if movement_input.normalized().length() > 0:
+	if raw_movement_input.normalized().length() > 0:
 		currentAcceleration += AccelerationSpeed * delta
 	else:
 		currentAcceleration -= AccelerationSpeed * delta
-	currentAcceleration = clamp(currentAcceleration,0,1)
+	
+	if sprint_input:
+		currentAcceleration = clamp(currentAcceleration,0,1)
+	else:
+		currentAcceleration = clamp(currentAcceleration,0,0.5)
 
 func _calculate_movement(delta):
 	
@@ -78,6 +81,7 @@ func _get_target_direction(input : Vector2) -> Vector3:
 	targetDirection += ProjectedLeftDirection * input.x
 	
 	targetDirection = targetDirection.normalized()
+	
 	return targetDirection
 
 func _calculate_gravity(delta):
@@ -86,7 +90,8 @@ func _calculate_gravity(delta):
 	else:
 		currentGravity -= delta * Gravity
 
-func _turn_character(target_direction : Vector3):
-	var target : Vector3 = target_direction + _body.translation
-	if target_direction.length() != 0:
+func _turn_character(target_direction : Vector3, delta : float):
+	current_direction = lerp(current_direction, target_direction, delta * RotationSpeed)
+	var target : Vector3 = current_direction + _body.translation
+	if current_direction.length() != 0:
 		_body.look_at(target,Vector3.UP)

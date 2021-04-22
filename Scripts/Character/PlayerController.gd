@@ -22,10 +22,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_update_input(delta)
-	_update_movement_input(delta)
+	_refresh_input(delta)
+	_update_motor_input(delta)
 
-func _update_input(delta):
+func _refresh_input(delta):
 	_move_input.y = 0
 	_move_input.y = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
 	
@@ -38,5 +38,6 @@ func _update_input(delta):
 		_is_sprinting = false
 	pass
 
-func _update_movement_input(delta):
-	_motor.movement_input = _move_input
+func _update_motor_input(delta):
+	_motor.raw_movement_input = _move_input
+	_motor.sprint_input = _is_sprinting

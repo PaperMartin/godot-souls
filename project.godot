@@ -216,6 +216,10 @@ config/name="ThirdPersonFighter"
 run/main_scene="res://Scenes/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/vsync/vsync_via_compositor=true
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
@@ -258,4 +262,5 @@ sprint={
 quality/directional_shadow/size=8192
 quality/shadows/filter_mode=2
 quality/voxel_cone_tracing/high_quality=true
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
