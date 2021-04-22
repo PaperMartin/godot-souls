@@ -8,6 +8,7 @@ class_name CharacterMotor
 
 export var Gravity : float = 10
 export var RotationSpeed : float = 4
+export var AccelerationSpeed : float = 2
 export var Body : NodePath
 export var AnimTree : NodePath
 export var MovementAxis : NodePath
@@ -17,6 +18,8 @@ onready var _body : KinematicBody = get_node(Body)
 onready var _movementaxis : Spatial = get_node(MovementAxis)
 
 var movement_input : Vector2
+var smoothed_movement_input : Vector2 = Vector2.ZERO
+var currentAcceleration : float
 var currentGravity : float
 
 # Called when the node enters the scene tree for the first time.
@@ -25,18 +28,36 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var target_direction : Vector3 = _get_target_direction(movement_input)
+	var target_direction : Vector3 = _get_target_direction(smoothed_movement_input)
+	_smooth_input(delta)
+	_update_acceleration(delta)
 	_calculate_gravity(delta)
 	_turn_character(target_direction)
 	_calculate_movement(delta)
 
+func _smooth_input(delta):
+	smoothed_movement_input = lerp(smoothed_movement_input,movement_input,RotationSpeed * delta)
+
+func _update_acceleration(delta):
+	if movement_input.normalized().length() > 0:
+		currentAcceleration += AccelerationSpeed * delta
+	else:
+		currentAcceleration -= AccelerationSpeed * delta
+	currentAcceleration = clamp(currentAcceleration,0,1)
+
 func _calculate_movement(delta):
-	_anim_tree.set_movement_speed(movement_input.normalized().length())
+	
+	
+	_anim_tree.set_movement_speed(currentAcceleration)
+	
 	var rootmotion : Transform = _get_root_motion()
 	var velocity : Vector3 = rootmotion.origin
+	
 	velocity.y += currentGravity * delta
 	if velocity.y >= 0:
 		velocity.y -= delta
+	
+# warning-ignore:return_value_discarded
 	_body.move_and_slide_with_snap(velocity / delta, Vector3(0,-0.1,0),Vector3(0,1,0), true)
 
 func _get_root_motion() -> Transform:
@@ -47,6 +68,7 @@ func _get_target_direction(input : Vector2) -> Vector3:
 	
 	var ForwardDirection : Vector3 = _movementaxis.global_transform.basis.z
 	var LeftDirection : Vector3 = _movementaxis.global_transform.basis.x
+	
 	var ProjectedForwardDirection : Vector3 = ForwardDirection.slide(Vector3.UP)
 	var ProjectedLeftDirection = LeftDirection.slide(Vector3.UP)
 	

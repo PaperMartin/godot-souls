@@ -23,6 +23,8 @@ shape = SubResource( 1 )
 
 [node name="Motor" type="Node" parent="."]
 script = ExtResource( 2 )
+RotationSpeed = 8.0
+AccelerationSpeed = 4.0
 Body = NodePath("..")
 AnimTree = NodePath("../Spatial/AnimationTree")
 MovementAxis = NodePath("../CamPivotPosition/CamPivotRotation/SpringArm/Camera")
@@ -30,7 +32,6 @@ MovementAxis = NodePath("../CamPivotPosition/CamPivotRotation/SpringArm/Camera")
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource( 3 )
 acceleration = 4.0
-AnimTree = NodePath("../Spatial/AnimationTree")
 Motor = NodePath("../Motor")
 
 [node name="CamPivotPosition" type="Spatial" parent="."]
@@ -53,7 +54,7 @@ near = 0.01
 
 [node name="Spatial" parent="." instance=ExtResource( 1 )]
 
-[node name="AnimationTree" parent="Spatial" index="1"]
+[node name="AnimationTree" parent="Spatial" index="0"]
 parameters/StateMachine/playback = SubResource( 3 )
 BodyPath = NodePath("../..")
 

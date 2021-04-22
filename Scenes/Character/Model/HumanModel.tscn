@@ -7,9 +7,6 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="RootMotionView" type="RootMotionView" parent="."]
-animation_path = NodePath("../AnimationTree")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = ExtResource( 2 )
 anim_player = NodePath("../LowPolyHuman/AnimationPlayer")
