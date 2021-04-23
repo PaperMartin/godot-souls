@@ -24,6 +24,8 @@ var target_direction : Vector3
 var currentAcceleration : float
 var currentGravity : float
 
+const FLOAT_EPSILON = 0.025
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -38,19 +40,21 @@ func _physics_process(delta):
 	_calculate_movement(delta)
 
 func _update_acceleration(delta):
+	var target_acceleration : float = 0
 	if raw_movement_input.normalized().length() > 0:
-		currentAcceleration += AccelerationSpeed * delta
+		if sprint_input:
+			target_acceleration = 1
+		else:
+			target_acceleration = 0.5
 	else:
-		currentAcceleration -= AccelerationSpeed * delta
+		target_acceleration = 0
 	
-	if sprint_input:
-		currentAcceleration = clamp(currentAcceleration,0,1)
-	else:
-		currentAcceleration = clamp(currentAcceleration,0,0.5)
+	if currentAcceleration > target_acceleration + FLOAT_EPSILON:
+		currentAcceleration -= delta * AccelerationSpeed
+	if currentAcceleration < target_acceleration - FLOAT_EPSILON:
+		currentAcceleration += delta * AccelerationSpeed
 
 func _calculate_movement(delta):
-	
-	
 	_anim_tree.set_movement_speed(currentAcceleration)
 	
 	var rootmotion : Transform = _get_root_motion()

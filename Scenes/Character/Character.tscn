@@ -23,15 +23,14 @@ shape = SubResource( 1 )
 
 [node name="Motor" type="Node" parent="."]
 script = ExtResource( 2 )
-RotationSpeed = 8.0
-AccelerationSpeed = 4.0
+RotationSpeed = 6.0
+AccelerationSpeed = 3.0
 Body = NodePath("..")
 AnimTree = NodePath("../Spatial/AnimationTree")
 MovementAxis = NodePath("../CamPivotPosition/CamPivotRotation/SpringArm/Camera")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource( 3 )
-acceleration = 4.0
 Motor = NodePath("../Motor")
 
 [node name="CamPivotPosition" type="Spatial" parent="."]

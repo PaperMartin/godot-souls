@@ -5,9 +5,7 @@ class_name PlayerController
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var acceleration : float = 1
 export var Motor : NodePath
-
 var _motor : CharacterMotor
 var _move_input : Vector2 = Vector2.ZERO
 var _input_velocity : Vector2 = Vector2.ZERO
