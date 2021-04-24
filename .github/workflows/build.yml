@@ -1,17 +1,28 @@
-name: Build Godot
-  # You may pin to the exact commit or the version.
-  # uses: josephbmanley/build-godot-action@11589640849ce5bd1bab945c694bb418cb06cb15
-  uses: PaperMartin/godot-souls
-  with:
-    # Name of the exported binary
-    name: GodotSouls
-    # Name of the preset in `export_presets.cfg` to use
-    preset: windows
-    # Optional name of the subdirectory to put exported project in
-    subdirectory: # optional, default is 
-    # Set true to output an artifact zip file
-    package: # optional
-    # Location of Godot project in repository
-    projectDir: # optional, default is .
-    # Whether or not to use `--export-debug`
-    debugMode: # optional
+name: Build Godot Project
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  Godot:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [linux, windows, mac]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Build
+        id: build
+        uses: josephbmanley/build-godot-action@v1.4.1
+        with:
+          name: example
+          preset: ${{ matrix.platform }}
+          debugMode: "true"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Client - ${{ matrix.platform }}
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
