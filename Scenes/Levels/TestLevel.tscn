@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://addons/qodot/textures/ThirdPersonFighterTextures/TestGrid.tres" type="Material" id=1]
 [ext_resource path="res://Scenes/Character/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=3]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -11, -5, -11, 22, 10, 22 )
@@ -115,3 +116,6 @@ shape = SubResource( 9 )
 
 [node name="entity_0_brush_6_collision_shape" type="CollisionShape" parent="Level/entity_0_worldspawn"]
 shape = SubResource( 10 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 5 )

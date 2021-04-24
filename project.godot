@@ -9,10 +9,50 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "UMLStateMachineBase",
+"class": "ActionBase",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/action_base.gd"
+}, {
 "base": "Node",
 "class": "CharacterMotor",
 "language": "GDScript",
 "path": "res://Scripts/Character/CharacterMotor.gd"
+}, {
+"base": "Resource",
+"class": "Comparator",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/comparator.gd"
+}, {
+"base": "EventBase",
+"class": "DeferredEvent",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/event_base/deferred_event.gd"
+}, {
+"base": "ActionBase",
+"class": "EmittedEvent",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/action_base/emitted_event.gd"
+}, {
+"base": "EventBase",
+"class": "Event",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/event_base/event.gd"
+}, {
+"base": "UMLStateMachineBase",
+"class": "EventBase",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/event_base.gd"
+}, {
+"base": "UMLStateMachineBase",
+"class": "Guard",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/guard.gd"
+}, {
+"base": "ActionBase",
+"class": "InternalTransition",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/action_base/internal_transition.gd"
 }, {
 "base": "LiquidLayer",
 "class": "LavaLayer",
@@ -144,10 +184,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/import_plugins/quake_wad_import_plugin.gd"
 }, {
+"base": "StateBase",
+"class": "Region",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/state_base/orthogonal_region.gd"
+}, {
+"base": "StateBase",
+"class": "Root",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/state_base/root.gd"
+}, {
 "base": "LiquidLayer",
 "class": "SlimeLayer",
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid/slime.gd"
+}, {
+"base": "StateBase",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/state_base/state.gd"
+}, {
+"base": "UMLStateMachineBase",
+"class": "StateBase",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/state_base.gd"
+}, {
+"base": "ActionBase",
+"class": "Transition",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine/action_base/transition.gd"
 }, {
 "base": "Resource",
 "class": "TrenchBroomFaceAttrib",
@@ -169,13 +234,41 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd"
 }, {
+"base": "Node",
+"class": "UMLStateMachineBase",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine.gd"
+}, {
+"base": "Reference",
+"class": "UMLStateMachineEnums",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine_enums.gd"
+}, {
+"base": "EditorPlugin",
+"class": "UMLStateMachinePlugin",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/uml_state_machine_plugin.gd"
+}, {
+"base": "Reference",
+"class": "UMLStateMachineUtil",
+"language": "GDScript",
+"path": "res://addons/uml_state_machine/src/uml_state_machine_util.gd"
+}, {
 "base": "LiquidLayer",
 "class": "WaterLayer",
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid/water.gd"
 } ]
 _global_script_class_icons={
+"ActionBase": "",
 "CharacterMotor": "",
+"Comparator": "",
+"DeferredEvent": "res://addons/uml_state_machine/icons/deferred_event.svg",
+"EmittedEvent": "res://addons/uml_state_machine/icons/emitted_event.svg",
+"Event": "res://addons/uml_state_machine/icons/event.svg",
+"EventBase": "",
+"Guard": "res://addons/uml_state_machine/icons/guard.svg",
+"InternalTransition": "res://addons/uml_state_machine/icons/internal_transition.svg",
 "LavaLayer": "",
 "LiquidLayer": "",
 "PhysicsBall": "",
@@ -202,11 +295,20 @@ _global_script_class_icons={
 "QuakePaletteImportPlugin": "",
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
+"Region": "res://addons/uml_state_machine/icons/orthogonal_region.svg",
+"Root": "res://addons/uml_state_machine/icons/root.svg",
 "SlimeLayer": "",
+"State": "res://addons/uml_state_machine/icons/state.svg",
+"StateBase": "",
+"Transition": "res://addons/uml_state_machine/icons/transition.svg",
 "TrenchBroomFaceAttrib": "",
 "TrenchBroomGameConfigFile": "",
 "TrenchBroomGameConfigFolder": "",
 "TrenchBroomTag": "",
+"UMLStateMachineBase": "",
+"UMLStateMachineEnums": "",
+"UMLStateMachinePlugin": "",
+"UMLStateMachineUtil": "",
 "WaterLayer": ""
 }
 
@@ -222,33 +324,58 @@ window/vsync/vsync_via_compositor=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/qodot/plugin.cfg", "res://addons/uml_state_machine/plugin.cfg" )
 
 [input]
 
 move_forward={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
  ]
 }
 move_backward={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
  ]
 }
 move_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
  ]
 }
 move_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
  ]
 }
 sprint={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+camera_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":-1.0,"script":null)
+ ]
+}
+camera_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+camera_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":-1.0,"script":null)
+ ]
+}
+camera_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
  ]
 }
 

@@ -23,8 +23,8 @@ shape = SubResource( 1 )
 
 [node name="Motor" type="Node" parent="."]
 script = ExtResource( 2 )
-RotationSpeed = 6.0
-AccelerationSpeed = 3.0
+RotationSpeed = 10.0
+AccelerationSpeed = 4.0
 Body = NodePath("..")
 AnimTree = NodePath("../Spatial/AnimationTree")
 MovementAxis = NodePath("../CamPivotPosition/CamPivotRotation/SpringArm/Camera")
@@ -38,7 +38,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.536, 0 )
 
 [node name="CamPivotRotation" type="Spatial" parent="CamPivotPosition"]
 script = ExtResource( 4 )
-Sensitivity = Vector2( 0.25, 0.25 )
+MouseSensitivity = Vector2( 0.25, 0.25 )
+ControllerSensitivity = Vector2( 4, 4 )
 MinMaxVerticalRotation = Vector2( -85, 85 )
 FollowSpeed = 10.0
 Body = NodePath("..")
