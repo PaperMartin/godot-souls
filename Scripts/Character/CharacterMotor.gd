@@ -81,11 +81,11 @@ func _get_target_direction(input : Vector2) -> Vector3:
 
 	var targetDirection : Vector3 = Vector3.ZERO
 
-	targetDirection.x = -input.x
+	targetDirection.x = input.x
 	targetDirection.y = 0
-	targetDirection.z = -input.y
+	targetDirection.z = input.y
 	
-	targetDirection.rotated(Vector3.UP,_movementaxis.rotation.y)
+	targetDirection = targetDirection.rotated(Vector3.UP,_movementaxis.global_transform.basis.get_euler().y)
 	
 	return targetDirection
 
