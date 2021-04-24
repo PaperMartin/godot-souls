@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Character/Animation/HumanAnimManager.gd" type="Script" id=3]
 [ext_resource path="res://Animations/Humanoid/HumanAnimStateMachine.tres" type="AnimationNodeStateMachinePlayback" id=4]
 
-[node name="Spatial" type="Spatial"]
+[node name="Model" type="Spatial"]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = ExtResource( 2 )
