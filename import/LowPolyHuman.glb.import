@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/LowPolyHuman.glb-626eee131a12695337738387494738bd.scn"
+path="res://.import/LowPolyHuman.glb-ada12453ce415f805839019bc954d1fe.scn"
 
 [deps]
 
-source_file="res://Models/LowPolyHuman.glb"
-dest_files=[ "res://.import/LowPolyHuman.glb-626eee131a12695337738387494738bd.scn" ]
+source_file="res://import/LowPolyHuman.glb"
+dest_files=[ "res://.import/LowPolyHuman.glb-ada12453ce415f805839019bc954d1fe.scn" ]
 
 [params]
 
