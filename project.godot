@@ -328,26 +328,31 @@ enabled=PoolStringArray( "res://addons/qodot/plugin.cfg", "res://addons/uml_stat
 
 [input]
 
-move_forward={
+ui_end={
 "deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777230,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_forward={
+"deadzone": 0.25,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
  ]
 }
 move_backward={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
  ]
 }
 move_left={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
  ]
 }
 move_right={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
  ]
@@ -359,22 +364,22 @@ sprint={
  ]
 }
 camera_left={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":-1.0,"script":null)
  ]
 }
 camera_right={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
  ]
 }
 camera_up={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":-1.0,"script":null)
  ]
 }
 camera_down={
-"deadzone": 0.5,
+"deadzone": 0.25,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
  ]
 }
@@ -389,5 +394,6 @@ camera_down={
 quality/directional_shadow/size=8192
 quality/shadows/filter_mode=2
 quality/voxel_cone_tracing/high_quality=true
+quality/filters/msaa=2
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

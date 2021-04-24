@@ -10,8 +10,6 @@ var _motor : CharacterMotor
 var _move_input : Vector2 = Vector2.ZERO
 var _input_velocity : Vector2 = Vector2.ZERO
 var _is_sprinting : bool = false
-const FLOAT_EPSILON = 0.05
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,11 +22,9 @@ func _process(delta):
 	_update_motor_input(delta)
 
 func _refresh_input(delta):
-	_move_input.y = 0
 	_move_input.y = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
-	
-	_move_input.x = 0
 	_move_input.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
+	#_move_input = _move_input.normalized()
 	
 	if Input.is_action_pressed("sprint"):
 		_is_sprinting = true
