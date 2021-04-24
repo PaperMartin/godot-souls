@@ -18,11 +18,11 @@ jobs:
         id: build
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
-          name: example
+          name: GodotSouls.exe
           preset: ${{ matrix.platform }}
           debugMode: "true"
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Godot Souls - ${{ matrix.platform }}.exe
+          name: Godot Souls - ${{ matrix.platform }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
