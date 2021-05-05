@@ -59,6 +59,7 @@ func _update_acceleration(delta):
 				currentAcceleration += delta * AccelerationSpeed
 			else :
 				currentAcceleration = target_acceleration
+
 func _calculate_movement(delta):
 	_anim_tree.set_movement_speed(currentAcceleration)
 	

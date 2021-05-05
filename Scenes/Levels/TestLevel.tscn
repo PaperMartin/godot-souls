@@ -80,7 +80,7 @@ energy = 0.5
 data = SubResource( 1 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0414452, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76, 0, -2.059 )
 
 [node name="Level" type="Spatial" parent="."]
 script = ExtResource( 3 )

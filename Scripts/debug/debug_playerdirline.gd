@@ -20,5 +20,6 @@ func _ready():
 
 func _process(delta):
 	translation = body.translation
-	look_at(translation + motor.target_direction,Vector3.UP)
+	if motor.target_direction.length() != 0:
+		look_at(translation + motor.target_direction,Vector3.UP)
 	pass

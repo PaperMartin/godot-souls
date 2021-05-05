@@ -56,10 +56,10 @@ states/idle/node = SubResource( 8 )
 states/idle/position = Vector2( 2, 101 )
 transitions = [ "idle", "Fall-loop", SubResource( 9 ), "Fall-loop", "Land", SubResource( 10 ), "Land", "idle", SubResource( 11 ) ]
 start_node = "idle"
-graph_offset = Vector2( -415, 64 )
+graph_offset = Vector2( -459, 90 )
 
 [resource]
-graph_offset = Vector2( 10, 230.5 )
+graph_offset = Vector2( -38, 266 )
 nodes/StateMachine/node = SubResource( 12 )
 nodes/StateMachine/position = Vector2( 280, 140 )
 nodes/output/position = Vector2( 580, 140 )

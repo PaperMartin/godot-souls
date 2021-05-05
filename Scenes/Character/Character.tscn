@@ -7,20 +7,20 @@
 [ext_resource path="res://Scripts/debug/debug_playerdirline.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.25
+radius = 0.23
 height = 1.5
 
 [sub_resource type="SphereShape" id=2]
 radius = 0.1
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
-
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 flags_unshaded = true
 albedo_color = Color( 0, 0.0156863, 1, 1 )
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=4]
 size = Vector3( 0.1, 0.1, 2 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [node name="Character" type="KinematicBody"]
 collision_layer = 2
@@ -60,22 +60,60 @@ spring_length = 4.0
 [node name="Camera" type="Camera" parent="CamPivotPosition/CamPivotRotation/SpringArm"]
 near = 0.01
 
-[node name="Model" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-
-[node name="AnimationTree" parent="Model" index="0"]
-parameters/StateMachine/playback = SubResource( 3 )
-BodyPath = NodePath("../..")
-
 [node name="Debug_Direction" type="Spatial" parent="."]
+pause_mode = 1
+visible = false
 script = ExtResource( 5 )
 Body = NodePath("..")
 Motor = NodePath("../Motor")
 
 [node name="PlayerDirLine" type="MeshInstance" parent="Debug_Direction"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-material_override = SubResource( 4 )
-mesh = SubResource( 5 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = null
 
+[node name="Model" parent="." instance=ExtResource( 1 )]
+
+[node name="AnimationTree" parent="Model" index="0"]
+parameters/StateMachine/playback = SubResource( 5 )
+BodyPath = NodePath("../..")
+
+[node name="Skeleton" parent="Model/rig" index="0"]
+bones/54/bound_children = [  ]
+bones/56/bound_children = [  ]
+
+[node name="Head" parent="Model/rig/Skeleton" index="3"]
+transform = Transform( 1, 4.62513e-05, -4.5374e-06, 2.6945e-05, 0.999942, -0.000212744, -8.21799e-06, -0.0002103, 1.00006, -0.0105499, 1.72056, 0.0236504 )
+
+[node name="Neck" parent="Model/rig/Skeleton" index="4"]
+transform = Transform( 0.985216, -0.0640029, -0.161495, -1.43708e-07, 0.92859, -0.368942, 0.17372, 0.362979, 0.915885, -0.00428872, 1.59757, -0.011862 )
+
+[node name="SoftBody" parent="Model/rig/Skeleton/Neck" index="0"]
+attachments/0/offset = Vector3( 0.0750001, -0.0407258, -0.0523988 )
+attachments/1/offset = Vector3( 0.0613638, -0.0407258, -0.0523988 )
+attachments/2/offset = Vector3( 0.0477274, -0.0407258, -0.0523988 )
+attachments/3/offset = Vector3( 0.034091, -0.0407258, -0.0523988 )
+attachments/4/offset = Vector3( 0.00681831, -0.0407258, -0.0523988 )
+attachments/5/offset = Vector3( 0.0204547, -0.0407258, -0.0523988 )
+attachments/6/offset = Vector3( -0.00681805, -0.0407258, -0.0523988 )
+attachments/7/offset = Vector3( -0.0204544, -0.0407258, -0.0523988 )
+attachments/8/offset = Vector3( -0.0340908, -0.0407258, -0.0523988 )
+attachments/9/offset = Vector3( -0.0477271, -0.0407258, -0.0523988 )
+attachments/10/offset = Vector3( -0.0613635, -0.0407258, -0.0523988 )
+attachments/11/offset = Vector3( -0.0749999, -0.0407258, -0.0523988 )
+attachments/12/offset = Vector3( 0.0750001, -0.0671747, -0.0708662 )
+attachments/13/offset = Vector3( 0.0613638, -0.0671747, -0.0708662 )
+attachments/14/offset = Vector3( 0.0477274, -0.0671747, -0.0708662 )
+attachments/15/offset = Vector3( 0.034091, -0.0671747, -0.0708662 )
+attachments/16/offset = Vector3( 0.0204547, -0.0671747, -0.0708662 )
+attachments/17/offset = Vector3( 0.00681831, -0.0671747, -0.0708662 )
+attachments/18/offset = Vector3( -0.00681805, -0.0671747, -0.0708662 )
+attachments/19/offset = Vector3( -0.0204544, -0.0671747, -0.0708662 )
+attachments/20/offset = Vector3( -0.0340908, -0.0671747, -0.0708662 )
+attachments/21/offset = Vector3( -0.0477271, -0.0671747, -0.0708662 )
+attachments/22/offset = Vector3( -0.0613635, -0.0671747, -0.0708662 )
+attachments/23/offset = Vector3( -0.0749999, -0.0671747, -0.0708662 )
+
 [editable path="Model"]
+[editable path="Model/rig"]

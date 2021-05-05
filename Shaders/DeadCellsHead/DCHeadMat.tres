@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Shaders/DeadCellsHead/RaymarchedDCHead.shader" type="Shader" id=1]
+[ext_resource path="res://Shaders/DeadCellsHead/DCHeadGradient.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/MAX_MARCH_STEP = 255
+shader_param/scrollSpeed = 3.0
+shader_param/flameScale = 7.5
+shader_param/sphere1Pos = Vector3( 0, 0, 0 )
+shader_param/sphere1Radius = 0.15
+shader_param/sphere2Pos = Vector3( 0, 0.195, 0 )
+shader_param/sphere2Radius = 0.01
+shader_param/smoothing = 0.169
+shader_param/flameSmoothing = 0.905
+shader_param/VerticalGradient = ExtResource( 2 )
