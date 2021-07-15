@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded,world_vertex_coords, depth_test_disable, shadows_disabled;
+render_mode unshaded, world_vertex_coords, depth_draw_always, depth_test_disable, shadows_disabled, blend_mix;
 
 uniform sampler2D VerticalGradient;
 uniform int MAX_MARCH_STEP = 255;
@@ -155,11 +155,11 @@ void fragment(){
 	vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	view.xyz /= view.w;
 	float linear_depth = -view.z;
-	
 	if (dist > linear_depth){
 		discard;
 	}
 	
+	DEPTH = dist;
 	vec3 p = camPos + dist * dir;
 	vec3 normal = estimateNormal(p,WORLD_MATRIX[3].xyz);
 	NORMAL = (INV_CAMERA_MATRIX * vec4(normal, 0.0)).xyz;

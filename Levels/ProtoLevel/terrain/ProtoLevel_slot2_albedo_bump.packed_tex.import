@@ -1,0 +1,18 @@
+[remap]
+
+importer="hterrain_packed_texture_importer"
+type="StreamTexture"
+path.s3tc="res://.import/ProtoLevel_slot2_albedo_bump.packed_tex-e4dfaae28c917f677697ac192a9dcf4f.s3tc.stex"
+path.etc2="res://.import/ProtoLevel_slot2_albedo_bump.packed_tex-e4dfaae28c917f677697ac192a9dcf4f.etc2.stex"
+
+[deps]
+
+source_file="res://Levels/ProtoLevel/terrain/ProtoLevel_slot2_albedo_bump.packed_tex"
+dest_files=[ "res://.import/ProtoLevel_slot2_albedo_bump.packed_tex-e4dfaae28c917f677697ac192a9dcf4f.s3tc.stex", "res://.import/ProtoLevel_slot2_albedo_bump.packed_tex-e4dfaae28c917f677697ac192a9dcf4f.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+flags/repeat=1
+flags/filter=true
+flags/mipmaps=true

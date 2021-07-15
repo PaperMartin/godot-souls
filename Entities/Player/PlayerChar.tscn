@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Entities/Player/Visuals/HumanModel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Player/CharacterMotor.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Player/PlayerCamera.gd" type="Script" id=4]
+[ext_resource path="res://Entities/Player/debug_playerdirline.gd" type="Script" id=5]
+[ext_resource path="res://addons/imjp94.yafsm/src/StateMachinePlayer.gd" type="Script" id=6]
+[ext_resource path="res://Entities/Player/State Machine/PlayerCharStateMachine.tres" type="Resource" id=7]
+[ext_resource path="res://Entities/Player/PlayerStateMachineManager.gd" type="Script" id=8]
+[ext_resource path="res://Entities/State.gd" type="Script" id=9]
+[ext_resource path="res://addons/imjp94.yafsm/src/debugger/StackPlayerDebugger.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.23
+height = 1.5
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.1
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 0, 0.0156863, 1, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 0.1, 0.1, 2 )
+
+[node name="Character" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 2147483651
+
+[node name="CollisionBody" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="Motor" type="Node" parent="."]
+script = ExtResource( 2 )
+AccelerationSpeed = 4.0
+Body = NodePath("..")
+AnimTree = NodePath("../Model/AnimationTree")
+MovementAxis = NodePath("../CamPivotPosition/CamPivotRotation/SpringArm/Camera")
+
+[node name="CamPivotPosition" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.536, 0 )
+
+[node name="CamPivotRotation" type="Spatial" parent="CamPivotPosition"]
+script = ExtResource( 4 )
+MouseSensitivity = Vector2( 0.25, 0.25 )
+ControllerSensitivity = Vector2( 4, 4 )
+MinMaxVerticalRotation = Vector2( -85, 85 )
+FollowSpeed = 10.0
+Body = NodePath("..")
+
+[node name="SpringArm" type="SpringArm" parent="CamPivotPosition/CamPivotRotation"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+shape = SubResource( 2 )
+spring_length = 4.0
+
+[node name="Camera" type="Camera" parent="CamPivotPosition/CamPivotRotation/SpringArm"]
+far = 3000.0
+
+[node name="Debug_Direction" type="Spatial" parent="."]
+pause_mode = 2
+visible = false
+script = ExtResource( 5 )
+Body = NodePath("..")
+Motor = NodePath("../Motor")
+
+[node name="PlayerDirLine" type="MeshInstance" parent="Debug_Direction"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+material_override = SubResource( 3 )
+cast_shadow = 0
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Model" parent="." instance=ExtResource( 1 )]
+
+[node name="AnimationTree" parent="Model" index="0"]
+parameters/TimeScale/scale = 1.25
+BodyPath = NodePath("../..")
+StateDict = {
+"Fall": 1,
+"Idle": 0,
+"Land": 2
+}
+
+[node name="Skeleton" parent="Model/rig" index="0"]
+bones/54/bound_children = [ NodePath("Neck") ]
+bones/56/bound_children = [ NodePath("Head") ]
+
+[node name="Head" parent="Model/rig/Skeleton" index="3"]
+transform = Transform( 1, 4.67505e-05, -5.30481e-06, 2.64347e-05, 0.999942, -0.000212699, -7.39098e-06, -0.0002103, 1.00006, -0.0105498, 1.72028, 0.0236503 )
+
+[node name="Neck" parent="Model/rig/Skeleton" index="4"]
+transform = Transform( 0.985216, -0.064003, -0.161495, -5.9323e-08, 0.92859, -0.368942, 0.17372, 0.362979, 0.915885, -0.00428871, 1.5973, -0.0118621 )
+
+[node name="SoftBody" parent="Model/rig/Skeleton/Neck" index="0"]
+attachments/0/offset = Vector3( 0.122727, -0.0730431, -0.088755 )
+attachments/1/offset = Vector3( 0.0954546, -0.0730431, -0.088755 )
+attachments/2/offset = Vector3( 0.0681818, -0.0730431, -0.088755 )
+attachments/3/offset = Vector3( 0.0136364, -0.0730431, -0.088755 )
+attachments/4/offset = Vector3( 0.0409091, -0.0730431, -0.088755 )
+attachments/5/offset = Vector3( -0.0136364, -0.0730431, -0.088755 )
+attachments/6/offset = Vector3( -0.0409091, -0.0730431, -0.088755 )
+attachments/7/offset = Vector3( -0.0681818, -0.0730431, -0.088755 )
+attachments/8/offset = Vector3( -0.0954546, -0.0730431, -0.088755 )
+attachments/9/offset = Vector3( -0.122727, -0.0730431, -0.088755 )
+attachments/10/offset = Vector3( -0.15, -0.0730431, -0.088755 )
+attachments/11/offset = Vector3( 0.15, -0.0994919, -0.107222 )
+attachments/12/offset = Vector3( 0.122727, -0.0994919, -0.107222 )
+attachments/13/offset = Vector3( 0.0954546, -0.0994919, -0.107222 )
+attachments/14/offset = Vector3( 0.0681818, -0.0994919, -0.107222 )
+attachments/15/offset = Vector3( 0.0409091, -0.0994919, -0.107222 )
+attachments/16/offset = Vector3( 0.0136364, -0.0994919, -0.107222 )
+attachments/17/offset = Vector3( -0.0136364, -0.0994919, -0.107222 )
+attachments/18/offset = Vector3( -0.0409091, -0.0994919, -0.107222 )
+attachments/19/offset = Vector3( -0.0681818, -0.0994919, -0.107222 )
+attachments/20/offset = Vector3( -0.0954546, -0.0994919, -0.107222 )
+attachments/21/offset = Vector3( -0.122727, -0.0994919, -0.107222 )
+attachments/22/offset = Vector3( -0.15, -0.0994919, -0.107222 )
+attachments/23/offset = Vector3( -0.075, -0.099492, -0.107222 )
+
+[node name="StateMachinePlayer" type="Node" parent="."]
+process_priority = 1
+script = ExtResource( 6 )
+state_machine = ExtResource( 7 )
+process_mode = 0
+
+[node name="Idle" type="Node" parent="StateMachinePlayer"]
+script = ExtResource( 9 )
+StateName = "Idle"
+
+[node name="Fall" type="Node" parent="StateMachinePlayer"]
+script = ExtResource( 9 )
+StateName = "Fall"
+
+[node name="Land" type="Node" parent="StateMachinePlayer"]
+script = ExtResource( 9 )
+StateName = "Land"
+
+[node name="StackPlayerDebugger" parent="StateMachinePlayer" instance=ExtResource( 10 )]
+
+[node name="SMManager" type="Node" parent="."]
+process_priority = 2
+script = ExtResource( 8 )
+StateMachine = NodePath("../StateMachinePlayer")
+Motor = NodePath("../Motor")
+
+[connection signal="animation_end" from="Model/AnimationTree" to="SMManager" method="animation_end_trigger"]
+[connection signal="enter" from="StateMachinePlayer/Idle" to="Model/AnimationTree" method="set_state" binds= [ "Idle" ]]
+[connection signal="enter" from="StateMachinePlayer/Fall" to="Model/AnimationTree" method="set_state" binds= [ "Fall" ]]
+[connection signal="enter" from="StateMachinePlayer/Land" to="Model/AnimationTree" method="set_state" binds= [ "Land" ]]
+
+[editable path="Model"]
+[editable path="Model/rig"]

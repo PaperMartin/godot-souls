@@ -1,0 +1,107 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=9 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Land"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Fall-loop"
+
+[sub_resource type="AnimationNodeTransition" id=3]
+input_count = 31
+xfade_time = 0.1
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_1/name = "Fall"
+input_1/auto_advance = false
+input_2/name = "Land"
+input_2/auto_advance = false
+input_3/name = "Attack1"
+input_3/auto_advance = false
+input_4/name = "Attack2"
+input_4/auto_advance = false
+input_5/name = "Attack3"
+input_5/auto_advance = false
+input_6/name = "Attack4"
+input_6/auto_advance = false
+input_7/name = "state 7"
+input_7/auto_advance = false
+input_8/name = "state 8"
+input_8/auto_advance = false
+input_9/name = "state 9"
+input_9/auto_advance = false
+input_10/name = "state 10"
+input_10/auto_advance = false
+input_11/name = "state 11"
+input_11/auto_advance = false
+input_12/name = "state 12"
+input_12/auto_advance = false
+input_13/name = "state 13"
+input_13/auto_advance = false
+input_14/name = "state 14"
+input_14/auto_advance = false
+input_15/name = "state 15"
+input_15/auto_advance = false
+input_16/name = "state 16"
+input_16/auto_advance = false
+input_17/name = "state 17"
+input_17/auto_advance = false
+input_18/name = "state 18"
+input_18/auto_advance = false
+input_19/name = "state 19"
+input_19/auto_advance = false
+input_20/name = "state 20"
+input_20/auto_advance = false
+input_21/name = "state 21"
+input_21/auto_advance = false
+input_22/name = "state 22"
+input_22/auto_advance = false
+input_23/name = "state 23"
+input_23/auto_advance = false
+input_24/name = "state 24"
+input_24/auto_advance = false
+input_25/name = "state 25"
+input_25/auto_advance = false
+input_26/name = "state 26"
+input_26/auto_advance = false
+input_27/name = "state 27"
+input_27/auto_advance = false
+input_28/name = "state 28"
+input_28/auto_advance = false
+input_29/name = "state 29"
+input_29/auto_advance = false
+input_30/name = "state 30"
+input_30/auto_advance = false
+
+[sub_resource type="AnimationNodeTimeScale" id=4]
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Idle-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "WalkForward-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Run-loop"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=8]
+blend_point_0/node = SubResource( 5 )
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource( 6 )
+blend_point_1/pos = 0.5
+blend_point_2/node = SubResource( 7 )
+blend_point_2/pos = 1.0
+
+[resource]
+graph_offset = Vector2( -1039, -298 )
+nodes/Animation/node = SubResource( 2 )
+nodes/Animation/position = Vector2( -640, -120 )
+"nodes/Animation 2/node" = SubResource( 1 )
+"nodes/Animation 2/position" = Vector2( -640, 0 )
+nodes/State/node = SubResource( 3 )
+nodes/State/position = Vector2( -260, -180 )
+nodes/TimeScale/node = SubResource( 4 )
+nodes/TimeScale/position = Vector2( -520, -260 )
+nodes/WalkSpeed/node = SubResource( 8 )
+nodes/WalkSpeed/position = Vector2( -780, -260 )
+nodes/output/position = Vector2( 40, -180 )
+node_connections = [ "output", 0, "State", "TimeScale", 0, "WalkSpeed", "State", 0, "TimeScale", "State", 1, "Animation", "State", 2, "Animation 2" ]

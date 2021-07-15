@@ -1,3 +1,0 @@
-class_name UMLStateMachinePlugin
-extends EditorPlugin
-tool

@@ -1,0 +1,8 @@
+{
+	"contains_albedo": true,
+	"resolution": 512,
+	"src": {
+		"a": "res://Textures/Sand/Ground033_2K_Displacement.jpg",
+		"rgb": "res://Textures/Sand/Ground033_2K_Color.jpg"
+	}
+}

@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Shaders/Water/Water.shader" type="Shader" id=1]
+[ext_resource path="res://Shaders/Water/Normal1.tres" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/WaterColor = Color( 0.345098, 0.490196, 0.576471, 1 )
+shader_param/metallic = 1.0
+shader_param/roughness = 0.0
+shader_param/depthFactor = 0.25
+shader_param/normal1param = Plane( 8, 8, 0.063, 0.063 )
+shader_param/normal2param = Plane( 4, 4, -0.125, -0.125 )
+shader_param/normalstrength = 3.0
+shader_param/normal1 = ExtResource( 2 )
+shader_param/normal2 = ExtResource( 2 )

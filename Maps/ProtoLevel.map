@@ -1,0 +1,385 @@
+// Game: ThirdPersonFighter
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/ThirdPersonFighterTextures;textures/special"
+// brush 0
+{
+( -96 192 128 ) ( -96 96 128 ) ( -96 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 96 128 ) ( -64 96 128 ) ( -64 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -64 96 0 ) ( -64 192 0 ) ( -96 192 0 ) special/skip 0 0 0 0.5 0.5
+( -96 192 128 ) ( -64 192 128 ) ( -64 96 128 ) special/skip 0 0 0 0.5 0.5
+( -64 192 0 ) ( -64 192 128 ) ( -96 192 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -64 96 128 ) ( -64 192 128 ) ( -64 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 1
+{
+( -96 192 0 ) ( -96 96 0 ) ( -96 96 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 96 0 ) ( 96 96 0 ) ( 96 96 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 96 -1856 ) ( 96 192 -1856 ) ( -96 192 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 192 0 ) ( 96 192 0 ) ( 96 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 192 -1856 ) ( 96 192 0 ) ( -96 192 0 ) special/skip 0 0 0 0.5 0.5
+( 96 96 0 ) ( 96 192 0 ) ( 96 192 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 2
+{
+( 64 192 128 ) ( 64 96 128 ) ( 64 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 64 96 128 ) ( 96 96 128 ) ( 96 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 0 ) ( 96 192 0 ) ( 64 192 0 ) special/skip 0 0 0 0.5 0.5
+( 64 192 128 ) ( 96 192 128 ) ( 96 96 128 ) special/skip 0 0 0 0.5 0.5
+( 96 192 0 ) ( 96 192 128 ) ( 64 192 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 128 ) ( 96 192 128 ) ( 96 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 3
+{
+( -96 192 160 ) ( -96 96 160 ) ( -96 96 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 96 160 ) ( 96 96 160 ) ( 96 96 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 128 ) ( 96 192 128 ) ( -96 192 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 192 160 ) ( 96 192 160 ) ( 96 96 160 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 192 128 ) ( 96 192 160 ) ( -96 192 160 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 160 ) ( 96 192 160 ) ( 96 192 128 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 4
+{
+( -96 96 0 ) ( -96 -1856 0 ) ( -96 -1856 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 -1856 0 ) ( 96 -1856 0 ) ( 96 -1856 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 -1856 -1856 ) ( 96 96 -1856 ) ( -96 96 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 96 0 ) ( 96 96 0 ) ( 96 -1856 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 -1856 ) ( 96 96 0 ) ( -96 96 0 ) special/skip 0 0 0 0.5 0.5
+( 96 -1856 0 ) ( 96 96 0 ) ( 96 96 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 5
+{
+( -32 -16 32 ) ( -32 -32 32 ) ( -32 -32 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -32 -32 32 ) ( -16 -32 32 ) ( -16 -32 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -16 -32 0 ) ( -16 -16 0 ) ( -32 -16 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -32 -16 32 ) ( -16 -16 32 ) ( -16 -32 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -16 -16 0 ) ( -16 -16 32 ) ( -32 -16 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -16 -32 32 ) ( -16 -16 32 ) ( -16 -16 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 6
+{
+( -96 832 64 ) ( -96 704 64 ) ( -96 704 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 704 64 ) ( 96 704 64 ) ( 96 704 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 704 -1856 ) ( 96 832 -1856 ) ( -96 832 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 832 64 ) ( 96 832 64 ) ( 96 704 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 832 -1856 ) ( 96 832 64 ) ( -96 832 64 ) special/skip 0 0 0 0.5 0.5
+( 96 704 64 ) ( 96 832 64 ) ( 96 832 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 7
+{
+( -96 448 48 ) ( -96 320 16 ) ( -96 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 320 16 ) ( -88 320 16 ) ( -88 320 0 ) special/skip 0 0 0 0.5 0.5
+( -88 320 16 ) ( -96 320 16 ) ( -96 448 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 320 0 ) ( -88 448 32 ) ( -96 448 32 ) special/skip 0 0 0 0.5 0.5
+( -88 448 32 ) ( -88 448 48 ) ( -96 448 48 ) special/skip 0 0 0 0.5 0.5
+( -88 320 16 ) ( -88 448 48 ) ( -88 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 8
+{
+( -96 576 32 ) ( -96 448 32 ) ( -96 448 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 448 32 ) ( 96 448 32 ) ( 96 448 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 448 -1856 ) ( 96 576 -1856 ) ( -96 576 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 576 32 ) ( 96 576 32 ) ( 96 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 576 -1856 ) ( 96 576 32 ) ( -96 576 32 ) special/skip 0 0 0 0.5 0.5
+( 96 448 32 ) ( 96 576 32 ) ( 96 576 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 9
+{
+( 88 832 80 ) ( 88 704 80 ) ( 88 704 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 704 80 ) ( 96 704 80 ) ( 96 704 64 ) special/skip 0 0 0 0.5 0.5
+( 96 704 64 ) ( 96 832 64 ) ( 88 832 64 ) special/skip 0 0 0 0.5 0.5
+( 88 832 80 ) ( 96 832 80 ) ( 96 704 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 832 64 ) ( 96 832 80 ) ( 88 832 80 ) special/skip 0 0 0 0.5 0.5
+( 96 704 80 ) ( 96 832 80 ) ( 96 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 10
+{
+( 88 704 80 ) ( 88 576 48 ) ( 88 576 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 576 48 ) ( 96 576 48 ) ( 96 576 32 ) special/skip 0 0 0 0.5 0.5
+( 96 576 48 ) ( 88 576 48 ) ( 88 704 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 576 32 ) ( 96 704 64 ) ( 88 704 64 ) special/skip 0 0 0 0.5 0.5
+( 96 704 64 ) ( 96 704 80 ) ( 88 704 80 ) special/skip 0 0 0 0.5 0.5
+( 96 576 48 ) ( 96 704 80 ) ( 96 704 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 11
+{
+( 88 448 48 ) ( 88 320 16 ) ( 88 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 320 16 ) ( 96 320 16 ) ( 96 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 16 ) ( 88 320 16 ) ( 88 448 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 0 ) ( 96 448 32 ) ( 88 448 32 ) special/skip 0 0 0 0.5 0.5
+( 96 448 32 ) ( 96 448 48 ) ( 88 448 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 16 ) ( 96 448 48 ) ( 96 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 12
+{
+( -96 576 48 ) ( -96 448 48 ) ( -96 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 448 48 ) ( -88 448 48 ) ( -88 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 448 32 ) ( -88 576 32 ) ( -96 576 32 ) special/skip 0 0 0 0.5 0.5
+( -96 576 48 ) ( -88 576 48 ) ( -88 448 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 576 32 ) ( -88 576 48 ) ( -96 576 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 448 48 ) ( -88 576 48 ) ( -88 576 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 13
+{
+( 88 576 48 ) ( 88 448 48 ) ( 88 448 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 448 48 ) ( 96 448 48 ) ( 96 448 32 ) special/skip 0 0 0 0.5 0.5
+( 96 448 32 ) ( 96 576 32 ) ( 88 576 32 ) special/skip 0 0 0 0.5 0.5
+( 88 576 48 ) ( 96 576 48 ) ( 96 448 48 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 576 32 ) ( 96 576 48 ) ( 88 576 48 ) special/skip 0 0 0 0.5 0.5
+( 96 448 48 ) ( 96 576 48 ) ( 96 576 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 14
+{
+( -96 832 80 ) ( -96 704 80 ) ( -96 704 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 704 80 ) ( -88 704 80 ) ( -88 704 64 ) special/skip 0 0 0 0.5 0.5
+( -88 704 64 ) ( -88 832 64 ) ( -96 832 64 ) special/skip 0 0 0 0.5 0.5
+( -96 832 80 ) ( -88 832 80 ) ( -88 704 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 832 64 ) ( -88 832 80 ) ( -96 832 80 ) special/skip 0 0 0 0.5 0.5
+( -88 704 80 ) ( -88 832 80 ) ( -88 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 15
+{
+( -96 448 32 ) ( -96 320 0 ) ( -96 320 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 320 0 ) ( 96 320 0 ) ( 96 320 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 448 32 ) ( 96 448 32 ) ( 96 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 -1856 ) ( 96 448 -1856 ) ( -96 448 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 448 -1856 ) ( 96 448 32 ) ( -96 448 32 ) special/skip 0 0 0 0.5 0.5
+( 96 320 0 ) ( 96 448 32 ) ( 96 448 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 16
+{
+( -96 704 80 ) ( -96 576 48 ) ( -96 576 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 576 48 ) ( -88 576 48 ) ( -88 576 32 ) special/skip 0 0 0 0.5 0.5
+( -88 576 48 ) ( -96 576 48 ) ( -96 704 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 576 32 ) ( -88 704 64 ) ( -96 704 64 ) special/skip 0 0 0 0.5 0.5
+( -88 704 64 ) ( -88 704 80 ) ( -96 704 80 ) special/skip 0 0 0 0.5 0.5
+( -88 576 48 ) ( -88 704 80 ) ( -88 704 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 17
+{
+( 88 320 16 ) ( 88 192 16 ) ( 88 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 192 16 ) ( 96 192 16 ) ( 96 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 192 0 ) ( 96 320 0 ) ( 88 320 0 ) special/skip 0 0 0 0.5 0.5
+( 88 320 16 ) ( 96 320 16 ) ( 96 192 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 0 ) ( 96 320 16 ) ( 88 320 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 192 16 ) ( 96 320 16 ) ( 96 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 18
+{
+( -96 704 64 ) ( -96 576 32 ) ( -96 576 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 576 32 ) ( 96 576 32 ) ( 96 576 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 704 64 ) ( 96 704 64 ) ( 96 576 32 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 576 -1856 ) ( 96 704 -1856 ) ( -96 704 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 704 -1856 ) ( 96 704 64 ) ( -96 704 64 ) special/skip 0 0 0 0.5 0.5
+( 96 576 32 ) ( 96 704 64 ) ( 96 704 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 19
+{
+( -96 320 0 ) ( -96 192 0 ) ( -96 192 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 192 0 ) ( 96 192 0 ) ( 96 192 -1856 ) special/skip 0 0 0 0.5 0.5
+( 96 192 -1856 ) ( 96 320 -1856 ) ( -96 320 -1856 ) special/skip 0 0 0 0.5 0.5
+( -96 320 0 ) ( 96 320 0 ) ( 96 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 320 -1856 ) ( 96 320 0 ) ( -96 320 0 ) special/skip 0 0 0 0.5 0.5
+( 96 192 0 ) ( 96 320 0 ) ( 96 320 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 20
+{
+( -96 320 16 ) ( -96 192 16 ) ( -96 192 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 192 16 ) ( -88 192 16 ) ( -88 192 0 ) special/skip 0 0 0 0.5 0.5
+( -88 192 0 ) ( -88 320 0 ) ( -96 320 0 ) special/skip 0 0 0 0.5 0.5
+( -96 320 16 ) ( -88 320 16 ) ( -88 192 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 320 0 ) ( -88 320 16 ) ( -96 320 16 ) special/skip 0 0 0 0.5 0.5
+( -88 192 16 ) ( -88 320 16 ) ( -88 320 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 21
+{
+( -640 960 64 ) ( -640 832 64 ) ( -640 832 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 832 64 ) ( 640 832 64 ) ( 640 832 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 832 -1856 ) ( 640 960 -1856 ) ( -640 960 -1856 ) special/skip 0 0 0 0.5 0.5
+( -640 960 64 ) ( 640 960 64 ) ( 640 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 960 -1856 ) ( 640 960 64 ) ( -640 960 64 ) special/skip 0 0 0 0.5 0.5
+( 640 832 64 ) ( 640 960 64 ) ( 640 960 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 22
+{
+( -640 840 80 ) ( -640 832 80 ) ( -640 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 832 80 ) ( -88 832 80 ) ( -88 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 832 64 ) ( -88 840 64 ) ( -640 840 64 ) special/skip 0 0 0 0.5 0.5
+( -640 840 80 ) ( -88 840 80 ) ( -88 832 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 840 64 ) ( -88 840 80 ) ( -640 840 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 832 80 ) ( -88 840 80 ) ( -88 840 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 23
+{
+( 88 840 80 ) ( 88 832 80 ) ( 88 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 832 80 ) ( 640 832 80 ) ( 640 832 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 832 64 ) ( 640 840 64 ) ( 88 840 64 ) special/skip 0 0 0 0.5 0.5
+( 88 840 80 ) ( 640 840 80 ) ( 640 832 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 840 64 ) ( 640 840 80 ) ( 88 840 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 832 80 ) ( 640 840 80 ) ( 640 840 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 24
+{
+( -640 1088 96 ) ( -640 960 64 ) ( -640 960 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 960 64 ) ( 640 960 64 ) ( 640 960 -1856 ) special/skip 0 0 0 0.5 0.5
+( -640 1088 96 ) ( 640 1088 96 ) ( 640 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 960 -1856 ) ( 640 1088 -1856 ) ( -640 1088 -1856 ) special/skip 0 0 0 0.5 0.5
+( 640 1088 -1856 ) ( 640 1088 96 ) ( -640 1088 96 ) special/skip 0 0 0 0.5 0.5
+( 640 960 64 ) ( 640 1088 96 ) ( 640 1088 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 25
+{
+( -640 1248 96 ) ( -640 1088 96 ) ( -640 1088 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 1088 96 ) ( 640 1088 96 ) ( 640 1088 -1856 ) special/skip 0 0 0 0.5 0.5
+( 640 1088 -1856 ) ( 640 1248 -1856 ) ( -640 1248 -1856 ) special/skip 0 0 0 0.5 0.5
+( -640 1248 96 ) ( 640 1248 96 ) ( 640 1088 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 1248 -1856 ) ( 640 1248 96 ) ( -640 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 1088 96 ) ( 640 1248 96 ) ( 640 1248 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 26
+{
+( -512 2144 96 ) ( -512 1248 96 ) ( -512 1248 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 1248 96 ) ( 512 1248 96 ) ( 512 1248 -1856 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 -1856 ) ( 512 2144 -1856 ) ( -512 2144 -1856 ) special/skip 0 0 0 0.5 0.5
+( -512 2144 96 ) ( 512 2144 96 ) ( 512 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 2144 -1856 ) ( 512 2144 96 ) ( -512 2144 96 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 96 ) ( 512 2144 96 ) ( 512 2144 -1856 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 27
+{
+( -512 1248 368 ) ( -512 1216 368 ) ( -512 1216 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 1216 368 ) ( -128 1216 368 ) ( -128 1216 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -128 1216 96 ) ( -128 1248 96 ) ( -512 1248 96 ) special/skip 0 0 0 0.5 0.5
+( -512 1248 368 ) ( -128 1248 368 ) ( -128 1216 368 ) special/skip 0 0 0 0.5 0.5
+( -128 1248 96 ) ( -128 1248 368 ) ( -512 1248 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -128 1216 368 ) ( -128 1248 368 ) ( -128 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 28
+{
+( 128 1248 368 ) ( 128 1216 368 ) ( 128 1216 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 128 1216 368 ) ( 512 1216 368 ) ( 512 1216 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 1216 96 ) ( 512 1248 96 ) ( 128 1248 96 ) special/skip 0 0 0 0.5 0.5
+( 128 1248 368 ) ( 512 1248 368 ) ( 512 1216 368 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 96 ) ( 512 1248 368 ) ( 128 1248 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 1216 368 ) ( 512 1248 368 ) ( 512 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 29
+{
+( -512 1248 640 ) ( -512 1216 640 ) ( -512 1216 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 1216 640 ) ( 512 1216 640 ) ( 512 1216 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 1216 368 ) ( 512 1248 368 ) ( -512 1248 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 1248 640 ) ( 512 1248 640 ) ( 512 1216 640 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 368 ) ( 512 1248 640 ) ( -512 1248 640 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 1216 640 ) ( 512 1248 640 ) ( 512 1248 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 30
+{
+( -512 2144 512 ) ( -512 1248 512 ) ( -512 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 1248 512 ) ( -352 1248 512 ) ( -352 1248 96 ) special/skip 0 0 0 0.5 0.5
+( -352 1248 96 ) ( -352 2144 96 ) ( -512 2144 96 ) special/skip 0 0 0 0.5 0.5
+( -512 2144 512 ) ( -352 2144 512 ) ( -352 1248 512 ) special/skip 0 0 0 0.5 0.5
+( -352 2144 96 ) ( -352 2144 512 ) ( -512 2144 512 ) special/skip 0 0 0 0.5 0.5
+( -352 1248 512 ) ( -352 2144 512 ) ( -352 2144 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 31
+{
+( 352 2144 512 ) ( 352 1248 512 ) ( 352 1248 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 352 1248 512 ) ( 512 1248 512 ) ( 512 1248 96 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 96 ) ( 512 2144 96 ) ( 352 2144 96 ) special/skip 0 0 0 0.5 0.5
+( 352 2144 512 ) ( 512 2144 512 ) ( 512 1248 512 ) special/skip 0 0 0 0.5 0.5
+( 512 2144 96 ) ( 512 2144 512 ) ( 352 2144 512 ) special/skip 0 0 0 0.5 0.5
+( 512 1248 512 ) ( 512 2144 512 ) ( 512 2144 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 32
+{
+( -352 2144 512 ) ( -352 2112 512 ) ( -352 2112 96 ) special/skip 0 0 0 0.5 0.5
+( -352 2112 512 ) ( 352 2112 512 ) ( 352 2112 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 352 2112 96 ) ( 352 2144 96 ) ( -352 2144 96 ) special/skip 0 0 0 0.5 0.5
+( -352 2144 512 ) ( 352 2144 512 ) ( 352 2112 512 ) special/skip 0 0 0 0.5 0.5
+( 352 2144 96 ) ( 352 2144 512 ) ( -352 2144 512 ) special/skip 0 0 0 0.5 0.5
+( 352 2112 512 ) ( 352 2144 512 ) ( 352 2144 96 ) special/skip 0 0 0 0.5 0.5
+}
+// brush 33
+{
+( -128 1248 368 ) ( -128 1232 368 ) ( -128 1232 96 ) special/skip 0 0 0 0.5 0.5
+( -128 1232 368 ) ( 128 1232 368 ) ( 128 1232 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 128 1232 96 ) ( 128 1248 96 ) ( -128 1248 96 ) special/skip 0 0 0 0.5 0.5
+( -128 1248 368 ) ( 128 1248 368 ) ( 128 1232 368 ) special/skip 0 0 0 0.5 0.5
+( 128 1248 96 ) ( 128 1248 368 ) ( -128 1248 368 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 128 1232 368 ) ( 128 1248 368 ) ( 128 1248 96 ) special/skip 0 0 0 0.5 0.5
+}
+// brush 34
+{
+( -512 1216 640 ) ( -512 960 640 ) ( -512 960 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -512 960 640 ) ( -256 960 640 ) ( -256 960 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -256 960 16 ) ( -256 1216 16 ) ( -512 1216 16 ) special/skip 0 0 0 0.5 0.5
+( -512 1216 640 ) ( -256 1216 640 ) ( -256 960 640 ) special/skip 0 0 0 0.5 0.5
+( -256 1216 16 ) ( -256 1216 640 ) ( -512 1216 640 ) special/skip 0 0 0 0.5 0.5
+( -256 960 640 ) ( -256 1216 640 ) ( -256 1216 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 35
+{
+( 256 1216 640 ) ( 256 960 640 ) ( 256 960 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 256 960 640 ) ( 512 960 640 ) ( 512 960 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 512 960 16 ) ( 512 1216 16 ) ( 256 1216 16 ) special/skip 0 0 0 0.5 0.5
+( 256 1216 640 ) ( 512 1216 640 ) ( 512 960 640 ) special/skip 0 0 0 0.5 0.5
+( 512 1216 16 ) ( 512 1216 640 ) ( 256 1216 640 ) special/skip 0 0 0 0.5 0.5
+( 512 960 640 ) ( 512 1216 640 ) ( 512 1216 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 36
+{
+( -640 960 80 ) ( -640 840 80 ) ( -640 840 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 840 80 ) ( -632 840 80 ) ( -632 840 64 ) special/skip 0 0 0 0.5 0.5
+( -632 840 64 ) ( -632 960 64 ) ( -640 960 64 ) special/skip 0 0 0 0.5 0.5
+( -640 960 80 ) ( -632 960 80 ) ( -632 840 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -632 960 64 ) ( -632 960 80 ) ( -640 960 80 ) special/skip 0 0 0 0.5 0.5
+( -632 840 80 ) ( -632 960 80 ) ( -632 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 37
+{
+( -640 1088 112 ) ( -640 960 80 ) ( -640 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 960 80 ) ( -632 960 80 ) ( -632 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -640 1088 112 ) ( -632 1088 112 ) ( -632 960 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -632 960 64 ) ( -632 1088 96 ) ( -640 1088 96 ) special/skip 0 0 0 0.5 0.5
+( -632 1088 96 ) ( -632 1088 112 ) ( -640 1088 112 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -632 960 80 ) ( -632 1088 112 ) ( -632 1088 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 38
+{
+( 632 1088 112 ) ( 632 960 80 ) ( 632 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 632 960 80 ) ( 640 960 80 ) ( 640 960 64 ) special/skip 0 0 0 0.5 0.5
+( 632 1088 112 ) ( 640 1088 112 ) ( 640 960 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 960 64 ) ( 640 1088 96 ) ( 632 1088 96 ) special/skip 0 0 0 0.5 0.5
+( 640 1088 96 ) ( 640 1088 112 ) ( 632 1088 112 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 960 80 ) ( 640 1088 112 ) ( 640 1088 96 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 39
+{
+( 632 960 80 ) ( 632 840 80 ) ( 632 840 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 632 840 80 ) ( 640 840 80 ) ( 640 840 64 ) special/skip 0 0 0 0.5 0.5
+( 640 840 64 ) ( 640 960 64 ) ( 632 960 64 ) special/skip 0 0 0 0.5 0.5
+( 632 960 80 ) ( 640 960 80 ) ( 640 840 80 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 640 960 64 ) ( 640 960 80 ) ( 632 960 80 ) special/skip 0 0 0 0.5 0.5
+( 640 840 80 ) ( 640 960 80 ) ( 640 960 64 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 40
+{
+( -96 96 16 ) ( -96 -1856 16 ) ( -96 -1856 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -96 -1856 16 ) ( -88 -1856 16 ) ( -88 -1856 0 ) special/skip 0 0 0 0.5 0.5
+( -88 -1856 0 ) ( -88 96 0 ) ( -96 96 0 ) special/skip 0 0 0 0.5 0.5
+( -96 96 16 ) ( -88 96 16 ) ( -88 -1856 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( -88 96 0 ) ( -88 96 16 ) ( -96 96 16 ) special/skip 0 0 0 0.5 0.5
+( -88 -1856 16 ) ( -88 96 16 ) ( -88 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+// brush 41
+{
+( 88 96 16 ) ( 88 -1856 16 ) ( 88 -1856 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 88 -1856 16 ) ( 96 -1856 16 ) ( 96 -1856 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 -1856 0 ) ( 96 96 0 ) ( 88 96 0 ) special/skip 0 0 0 0.5 0.5
+( 88 96 16 ) ( 96 96 16 ) ( 96 -1856 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 96 0 ) ( 96 96 16 ) ( 88 96 16 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+( 96 -1856 16 ) ( 96 96 16 ) ( 96 96 0 ) ThirdPersonFighterTextures/TestGrid 0 0 0 0.5 0.5
+}
+}

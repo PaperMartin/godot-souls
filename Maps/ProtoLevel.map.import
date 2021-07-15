@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/ProtoLevel.map-13b8c89b683420753686b390a6ddb035.tres"
+
+[deps]
+
+source_file="res://Maps/ProtoLevel.map"
+dest_files=[ "res://.import/ProtoLevel.map-13b8c89b683420753686b390a6ddb035.tres" ]
+
+[params]
+
